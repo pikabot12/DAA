@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i, n;
+    cout<<"enter the range";
+    cin>>n;
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    int f, flag=0;
+    cin>>f;
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==f)
+        {
+            cout<<"present"<<i+1;
+            flag=1;
+        }
+    }
+    if(flag==0)
+    {
+        cout<<"not prsent"<<n;
+    }
+    return 0;
+}
