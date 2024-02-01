@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int test,input,bs,comp=1;
+    int i,j,s,e,f=0;
+    cin>>test;
+    for(i=0;i<test;i++)
+    {
+        f=0;
+        cin>>input;
+        int a[input];
+        for(j=0;j<input;j++)
+            cin>>a[j];
+        cin>>bs;
+        s=0;
+        e=input-1;
+        while(s<=e)
+        {
+            j=(s+e)/2;
+            if(bs==a[j])
+            {
+                f=1;
+                cout<<"Present "<<comp<<endl;;
+                break;
+            }
+            else if(bs<a[j])
+                e=j-1;
+            else
+                s=j+1;
+            comp++;
+        }
+        if(f==0)
+            cout<<"Not Prsent "<<comp<<endl;
+    }
+    return 0;
+
+}
