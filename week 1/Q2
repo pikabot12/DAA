@@ -3,11 +3,12 @@ using namespace std;
 
 int main()
 {
-    int test,input,bs,comp=1;
+    int test,input,bs,comp;
     int i,j,s,e,f=0;
     cin>>test;
     for(i=0;i<test;i++)
     {
+        comp=0;
         f=0;
         cin>>input;
         int a[input];
@@ -18,6 +19,7 @@ int main()
         e=input-1;
         while(s<=e)
         {
+            comp++;
             j=(s+e)/2;
             if(bs==a[j])
             {
@@ -29,7 +31,7 @@ int main()
                 e=j-1;
             else
                 s=j+1;
-            comp++;
+           
         }
         if(f==0)
             cout<<"Not Prsent "<<comp<<endl;
