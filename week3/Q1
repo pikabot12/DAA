@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+void Insertion(int a[],int n,int *com,int *shift)
+{
+	int i,j,k;
+	for(i=1;i<n;i++)
+	{
+		k=a[i];
+		j=i-1;
+		while(j>=0 && a[j]>k)
+		{
+		a[j+1]=a[j];
+		j--;
+		(*com)++;
+		(*shift)++;
+		}
+		a[j+1]=k;
+		(*shift)++;
+	}
+}	
+int main()
+{
+int n,a[100],i;
+int com=0;
+int shift=0;
+cout<<" Enter size of array"<<endl;
+cin>>n;
+cout<<"Enter elements of array"<<endl;
+for(i=0;i<n;i++)
+{
+cin>>a[i];
+}
+cout<<"Unsorted array"<<endl;
+for(i=0;i<n;i++)
+{
+cout<<a[i]<<endl;
+}
+cout<<"Sorted array"<<endl;
+Insertion(a,n,&com,&shift);
+for(i=0;i<n;i++)
+{
+cout<<a[i]<<endl;
+}
+cout<<"Total Comaprision="<<com<<endl;
+cout<<"Total shifts="<<shift<<endl;
+return 0;
+}
